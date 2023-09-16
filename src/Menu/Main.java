@@ -1,23 +1,37 @@
 package src.Menu;
 
+import src.factorymethod.Juguete;
+
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class Main {
 
-    private static Scanner scanner = new Scanner((System.in));
+    public static ArrayList<Juguete> juguetes = new ArrayList<>();
+    public static Scanner scanner = new Scanner((System.in));
     private static final int OPCION_SALIR = 5;
     public static void main(String[] args){
 
+        try{
+
+            Main.menu();
+
+        } catch (Exception e) {
+            System.out.println("\n\t Valor erroneo, revise por favor ");
+            Main.menu();
+        }
+    }
+
+    public static void menu() {
+
+        try{
         Map<Integer, Accion> strategy = AccionHandler.getStrategy();
-        //Map<Integer, Accion> strategy = new HashMap<>();
-        //strategy.put(1, new AccionCrear());
-        //strategy.put(2, new AccionLeer());
-        //strategy.put(3, new AccionActualizar());
-        //strategy.put(4, new AccionEliminar());
 
         int opcion;
         do {
+            System.out.println("\n\t");
             System.out.println("Por favor ingrese una opcion:" +
                     "\n1 - Crear juguete"+
                     "\n2 - Clonar juguete" +
@@ -38,5 +52,11 @@ public class Main {
 
         }while (opcion != OPCION_SALIR);
         System.out.println("Salida exitosa");
+
+        } catch (Exception e) {
+            System.out.println("\n\t Valor erroneo, revise por favor ");
+            Main.menu();
+        }
+
     }
 }

@@ -22,17 +22,5 @@ public class AccionHandler {
         return strategy;
     }
 
-    //private static Map<Integer, Accion> strategy =
-      //      List.of(new AccionCrear(),
-        //            new AccionLeer(),
-          //          new AccionActualizar(),
-            //        new AccionEliminar())
-            //.stream()
-            //.collect(Collectors.toMap(Accion::getOpcion, Function.identity()));;
 
-    //public static Map<Integer, Accion> getStrategy(){
-
-      //  return strategy;
-
-    //}
 }

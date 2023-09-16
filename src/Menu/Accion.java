@@ -1,7 +1,8 @@
 package src.Menu;
 
-public interface Accion {
+import src.factorymethod.Juguete;
 
+public interface Accion {
 
         void aplicar();
 

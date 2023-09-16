@@ -2,9 +2,9 @@ package src.factorymethod;
 
 public interface Juguete {
 
-    String getTipoMasa();
+    Juguete clone();
 
-    String getTipoQueso();
+    int getid();
 
-    String getToppings();
+    void setid(int id);
 }
