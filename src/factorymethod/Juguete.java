@@ -6,5 +6,7 @@ public interface Juguete {
 
     int getid();
 
+    int getnumpuertas();
+
     void setid(int id);
 }

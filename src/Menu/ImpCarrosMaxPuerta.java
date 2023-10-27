@@ -1,13 +1,13 @@
 package src.Menu;
+
 import src.factorymethod.Juguete;
 
-import java.sql.SQLException;
+import java.util.Comparator;
+import java.util.Optional;
 
 import static src.Menu.Main.juguetes;
-import static src.Menu.Main.main;
 
-public class Registro implements Accion{
-
+public class ImpCarrosMaxPuerta implements Accion{
     @Override
     public void aplicar() {
 
@@ -16,9 +16,11 @@ public class Registro implements Accion{
         } else {
             try {
 
-                juguetes.stream()
-                        .forEach(System.out::println);
+                Optional<Juguete> maximo = juguetes.stream() //valor maximo
+                        .max(Comparator.comparing(juguete -> juguete.getnumpuertas()));
 
+                System.out.println("\n\t El carro con mayor numero de puertas es: ");
+                System.out.println(maximo);
 
             } catch (Exception e) {
                 System.out.println("\n\t Valor erroneo, revise por favor ");
@@ -27,10 +29,11 @@ public class Registro implements Accion{
 
 
         }
+
     }
 
     @Override
     public int getOpcion() {
-        return 4;
+        return 6;
     }
 }

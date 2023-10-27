@@ -11,7 +11,7 @@ public class Main {
 
     public static ArrayList<Juguete> juguetes = new ArrayList<>();
     public static Scanner scanner = new Scanner((System.in));
-    private static final int OPCION_SALIR = 5;
+    private static final int opcionSalir = 9;
     public static void main(String[] args){
 
         try{
@@ -37,11 +37,15 @@ public class Main {
                     "\n2 - Clonar juguete" +
                     "\n3 - Eliminar juguete" +
                     "\n4 - Registro de juguetes"+
-                    "\n5 - Salir");
+                    "\n5 - Impresion de peluches o carritos"+
+                    "\n6 - Impresion carritos con mayor numero de puertas"+
+                    "\n7 - Conversion de Set a Map"+
+                    "\n8 - Eliminacion de juguete por color"+
+                    "\n9 - Salir");
             opcion = scanner.nextInt();
             scanner.nextLine();
             Accion accion = strategy.get(opcion);
-            if (opcion == OPCION_SALIR) {
+            if (opcion == opcionSalir) {
                 continue;
             }
             if (accion == null) {
@@ -50,7 +54,7 @@ public class Main {
                 accion.aplicar();
             }
 
-        }while (opcion != OPCION_SALIR);
+        }while (opcion != opcionSalir);
         System.out.println("Salida exitosa");
 
         } catch (Exception e) {

@@ -47,6 +47,11 @@ public class Carrito implements Juguete{
     }
 
     @Override
+    public int getnumpuertas() {
+        return numpuertas;
+    }
+
+    @Override
     public void setid(int id) {
         this.id = id;
     }
